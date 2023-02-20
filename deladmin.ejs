@@ -1,0 +1,148 @@
+<html>
+
+
+<head>
+
+  <meta charset="utf-8">
+  <title>Admin page</title>
+  <script src="js/poem.js"></script>
+  <link rel="stylesheet" href="css/postpagepoems.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+ 
+  <h1>Admin page</h1>
+  <div class="navbar">
+
+    <ul>
+      
+      <li><a href="logngpage">Logout</a></li>
+      <li><a href="postshortstorypage">Short Stories</a></li>
+      <li><a href="postessaypage">Essays</a></li>
+      <li><a href="postpagepoems">Poems</a></li>
+      <li><a  href="deladmin">Admin</a></li>
+
+
+    </ul>
+  </div>
+<hr>
+<h1>poem details </h1>
+<h3>update poem</h3>
+  <div class="form">
+    <form action="/uppoem" method="POST">
+      <input class="text" type="text" placeholder="postid" name="postid"></br>
+      <input class="text" type="text" placeholder="Title" name="title"></br>
+      <textarea id="entry" name="entry" rows="4" cols="50" placeholder="whats on your mind..."></textarea>
+      <button class="buttonssubmit" type="submit">Update</button>
+    </form>
+
+  
+  </div>
+  
+  
+  <h3>delete poem</h3>
+  <div class="form">
+    <form action="/delepoem" method="POST">
+     <input class="text" type="text" placeholder="postid" name="postid"></br>
+      
+      <button class="buttonssubmit" type="submit">Delete</button>
+    </form>
+
+  
+  </div>
+  
+<h3>remove poem page comments</h3>
+      <form action="/delcomment" method="POST">
+
+        <input class="text" type="text" placeholder="commentid" name="postid"></br>
+		
+        
+        <button class="buttonssubmit" type="submit">Remove</button>
+      </form>
+	  
+	  
+	  
+      <hr>
+
+
+	  
+	  <h1>essay details</h1>
+	  <h3>update essay</h3>
+  <div class="form">
+    <form action="/upessay" method="POST">
+      <input class="text" type="text" placeholder="postid" name="postid"></br>
+	  <input class="text" type="text" placeholder="Title" name="title"></br>
+      <textarea id="entry" name="entry" rows="4" cols="50" placeholder="whats on your mind..."></textarea>
+      <button class="buttonssubmit" type="submit">Update</button>
+    </form>
+
+  
+  </div>
+  
+  
+  <h3>delete essay</h3>
+  <div class="form">
+    <form action="/delessay" method="POST">
+      <input class="text" type="text" placeholder="post id" name="postid"></br>
+      
+      <button class="buttonssubmit" type="submit">Delete</button>
+    </form>
+
+  
+  </div>
+  <h3>remove essay page comments</h3>
+
+      <form action="/delcomment" method="POST">
+
+        <input class="text" type="text" placeholder="comment id" name="title"></br>
+		
+        
+        <button class="buttonssubmit" type="submit">Remove</button>
+      </form>
+	  
+	  
+	  
+	  
+	  <hr>
+    <h1>short story details</h1>
+	  
+	  <h3>update shortstories</h3>
+  <div class="form">
+    <form action="/upshortstories" method="POST">
+      <input class="text" type="text" placeholder="postid" name="postid"></br>
+	  <input class="text" type="text" placeholder="Title" name="title"></br>
+      <textarea id="entry" name="entry" rows="4" cols="50" placeholder="whats on your mind..."></textarea>
+      <button class="buttonssubmit" type="submit">Update</button>
+    </form>
+
+  
+  </div>
+  
+  
+  <h3>delete short stories</h3>
+  <div class="form">
+    <form action="/delstories" method="POST">
+      <input class="text" type="text" placeholder="post id" name="postid"></br>
+      
+      <button class="buttonssubmit" type="submit">Delete</button>
+    </form>
+
+  
+  </div>
+  
+ <h3>remove short story comments</h3>
+      <form action="/delshortstorycomment" method="POST">
+
+        <input class="text" type="text" placeholder="post id" name="postid"></br>
+		
+      
+        
+        <button class="buttonssubmit" type="submit">Remove</button>
+      </form>
+     
+           
+<hr>
+
+</body>
+
+</html>

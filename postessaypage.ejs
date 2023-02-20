@@ -1,0 +1,144 @@
+<html>
+
+
+<head>
+
+ <meta charset="utf-8">
+ <title>essay page </title>
+ <script src="js/essay.js"></script>
+      <link rel="stylesheet" href="css/essaypage.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body>
+    <h1>Essay</h1>
+   <div class="navbar">
+   
+      <ul>
+        <ul>
+          <li></li>
+          <li><a href="logngpage">Logout</a></li>
+          <li><a href="postshortstorypage">Short Stories</a></li>
+          <li><a href="postessaypage">Essays</a></li>
+          <li><a href="postpagepoems">Poems</a></li>
+          <li><a  href="deladmin">Admin</a></li>
+     
+     
+       </ul>
+      </div>
+
+    <br><br><br>
+   <div class= "form">
+    <form action="/essyentry" method="POST">
+        <input class="text" type="text" placeholder="Title" name="title"></br>
+        <textarea id="essyentry" name="essyentry" rows="4" cols="50" placeholder="whats on your mind..."></textarea>
+        <button  class="buttonssubmit" type="submit">Post</button>
+      </form>
+    </div>
+      <br><br><br>
+    
+     
+  
+
+	 <%  if(essay.length > 0){ %>  
+        <% for(var i=0;i<essay.length;i++){ %>
+  
+            <div class="wrapper">
+            <p><%-  essay[i].essayid %></p>  
+                <h2>name:- </h2>
+ <%- essay[i].username %>
+
+ <h2>essay:- </h2>
+     <%- essay[i].essay %>
+</div>
+<table>
+  <tr>
+    <th>
+      <% var count=0 %>
+      <% for(var j=0;j<essylike.length;j++){ %>
+
+        <%if ((essylike[j].essyid) == (essay[i].essayid)  ){ %>
+          <%  count++ %>
+      <% } %>
+      <% } %>
+     
+      <%- count %>
+      Liked    </th>
+     <th></th>
+     <th> 
+      <form action="/essylike" method="POST">
+        <input class="postid" type="hidden" value=" <%= essay[i].essayid%>" placeholder="Title" name="postid">
+
+        <button class="color1" type="submit"  id="jkk1" onclick="myFunction1()" >
+         Like
+        </button>
+      </form>
+
+      <form action="/essydislike" method="POST">
+        <input class="postid" type="hidden" value=" <%= essay[i].essayid%>" placeholder="Title" name="postid">
+
+        <button class="color1" type="submit"  id="jkk2" onclick="myFunction2()" >
+          disLike
+         </button>
+        </form>
+
+     
+  </th
+  ><th></th>
+  <th>
+    <% var count=0 %>
+    <% for(var j=0;j<essaydislike.length;j++){ %>
+
+      <%if ((essaydislike[j].essayid) == (essay[i].essayid)){ %>
+        <%  count++ %>
+ 
+    <% } %>
+    <% } %>
+    <%- count %>
+    Disliked </th>
+  </tr>
+ 
+</table>
+ 
+
+
+
+
+    
+
+
+
+<form action="/essaycomment" method="POST">
+  <input class="postid" type="hidden" value=" <%= essay[i].essayid%>" placeholder="Title" name="postid"></br>
+    <textarea id="essyentrycomment" name="comment" rows="4" cols="50" placeholder="Enter youe comment here..."></textarea>
+    <button  class="buttonssubmit" type="submit">Post</button>
+  </form>
+  <br><br>
+  <% for(var j=0;j<essycomment.length;j++){ %>
+    
+
+    <%if (  ( essycomment[j].postid) ==  (essay[i].essayid) ){ %>
+     <%-  essycomment[j].commentid %> 
+  <%- essycomment[j].username %>
+  
+  <%- essycomment[j].comment %>
+  <br>
+  <% } %>
+  <% } %>
+
+
+
+<% } %>
+  <% } else { %>
+    <h1>essay data not found</h1>
+    <% } %>
+    
+        <br>
+       
+ 
+   
+   </body>
+   
+   </html>
+
+
+   

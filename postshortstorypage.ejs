@@ -1,0 +1,143 @@
+
+
+
+
+
+<html>
+
+
+<head>
+
+ <meta charset="utf-8">
+ <title>shortstory page </title>
+ <script src="js/shortstory.js"></script>
+      <link rel="stylesheet" href="css/postshortstorypage.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <h1>shortstory</h1>
+    <div class="navbar">
+   
+      <ul>
+        <li><a href="logngpage">Logout</a></li>
+        <li><a href="postshortstorypage">Short Stories</a></li>
+        <li><a href="postessaypage">Essays</a></li>
+        <li><a href="postpagepoems">Poems</a></li>
+        <li><a  href="deladmin">Admin</a></li>
+ 
+ 
+   </ul>
+      </div>
+
+    <br><br><br>
+   <div class= "form">
+    <form action="/shortstoriesentry" method="POST">
+        <input class="text" type="text" placeholder="Title" name="title"></br>
+        <textarea id="shortstory" name="shortstory" rows="4" cols="50" placeholder="whats on your mind..."></textarea>
+        <button  class="buttonssubmit" type="submit">Post</button>
+      </form>
+    </div>
+      <br><br><br>
+
+  
+
+      <%  if(shortstory.length > 0){ %>  
+        <% for(var i=0;i<shortstory.length;i++){ %>
+            <div class="wrapper">
+              <p><%-shortstory[i].shortstoryid  %></p>
+                <h2>name:- </h2>
+
+ <%- shortstory[i].username %>
+ <h2>Story:- </h2>
+ <%- shortstory[i].shortstory%>
+ 
+     
+ 
+
+</div>
+<table>
+  <tr>
+    <th>
+      <% var count=0 %>
+      <% for(var j=0;j<shortstorylike.length;j++){ %>
+
+        <%if ((shortstorylike[j].shortstoryid) == (shortstory[i].shortstoryid)){ %>
+          <%  count++ %>
+      <% } %>
+      <% } %>
+      
+      
+
+<%- count %>
+      Liked    </th>
+     <th></th>
+     <th> 
+      <form action="/shortstorylike" method="POST">
+        <input class="postid" type="hidden" value=" <%= shortstory[i].shortstoryid%>" placeholder="Title" name="postid">
+    
+        <button class="color1" type="submit"  id="jkk1" onclick="myFunction1()" >
+         Like
+        </button>
+      </form>
+
+      <form action="/shortstorydislike" method="POST">
+        <input class="postid" type="hidden" value=" <%= shortstory[i].shortstoryid%>" placeholder="Title" name="postid">
+     
+        <button class="color1" type="submit"  id="jkk2" onclick="myFunction2()" >
+          disLike
+         </button>
+        </form>
+
+     
+  </th
+  ><th></th>
+  <th> 
+    <% var count=0 %>
+    <% for(var j=0;j<shortstorydislike.length;j++){ %>
+
+      <%if ((shortstorydislike[j].shortstoryid) == (shortstory[i].shortstoryid)){ %>
+        <%  count++ %>
+ 
+    <% } %>
+    <% } %>
+    <%- count %>
+    Disliked </th>
+  </tr>
+  
+</table>
+ 
+
+
+    
+
+
+
+<form action="/shortstorycomment" method="POST">
+  <input class="postid" type="hidden" value=" <%= shortstory[i].shortstoryid%>" placeholder="Title" name="postid"></br>
+    <textarea id="comment" name="comment" rows="4" cols="50" placeholder="Enter youe comment here..."></textarea>
+    <button  class="buttonssubmit" type="submit">Post</button>
+  </form>
+  <br><br>
+  <% for(var j=0;j<shortstorycomment.length;j++){ %>
+  
+
+    <%if (  ( shortstorycomment[j].postid) ==  (shortstory[i].shortstoryid) ){ %>
+      
+<%-  shortstorycomment[j].commentId  %>  
+  <%- shortstorycomment[j].username %>
+  
+  <%- shortstorycomment[j].comment %>
+  <br>
+  <% } %>
+  <% } %>
+
+
+ 
+  <% } %>
+  <% } else { %>
+      <h1>shortstory data not found</h1>
+      <% } %>
+  
+   </body>
+   
+   </html>

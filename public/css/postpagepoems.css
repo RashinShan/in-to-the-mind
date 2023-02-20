@@ -1,0 +1,138 @@
+html,body{
+    display: grid;
+    height: 100%;
+    width: 100%;
+   place-items: center;
+     background: -webkit-linear-gradient(left,#00008B, #1E90FF)
+   
+  }
+ .buttonlikeactive{
+  background-color: yellow;
+ }
+  
+  .wrapper{
+      
+    
+    max-width: 100px;
+    position: relative; 
+   background: rgba(0, 0, 0, 0.3);
+    padding: 300px;
+    border-radius: 5px;
+    font-family:  Cursive;
+    box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  }
+  
+  
+  button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+  }
+  
+  .likedislike{
+    display: inline-block;
+  }
+  
+  textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  .text{
+   
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+  }
+  
+  .navbar{
+      
+    height: 100%;
+    width: 100%;
+    left: 0;
+    z-index: 0;
+    border-radius: 12px;
+     background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+     
+  
+      padding-left: 0px;
+  
+    
+  
+  }
+  .color1{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color:  white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  .color2{
+    background-color: white; /* white */
+    border: none;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+   background: -webkit-linear-gradient(left, #a445b2, #fa4299);
+  }
+  
+  li {
+    float: right;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color:#fc83bb;
+  }
+  
+  .active {
+    background-color:#fa4299 ;
+  }
+  .logout{
+      text-align: left;
+  }
+  
+  
